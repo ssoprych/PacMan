@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 967b92902b90161469d7c1cf37dea0cc
+guid: 9e383b2731ce1ba4b8234726318ccd37
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,169 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigCoin_0
+      name: PacManLeft_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628ad03926f2e5e49a7bfca55d6eafaa
-      internalID: 1380552548
+      spriteID: 2146453670cad9345adc0f54607d51fb
+      internalID: 2004792378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_1
+      name: PacManLeft_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6baa75f0d7d364b40b9b453aa74caab6
-      internalID: -475157615
+      spriteID: 7062843422b503340aa2537324dfbab3
+      internalID: 1874372611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_2
+      name: PacManLeft_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4086675a1ae920343999d03a2c2bfc74
-      internalID: -1004442280
+      spriteID: 467b2afcf61f4674ea395a9734acc8f7
+      internalID: 1750500894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_3
+      name: PacManLeft_3
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53534b60d5bc94e47870457e8b78c805
-      internalID: 1718659719
+      spriteID: 90dab5e2b788bef42a542017d7e4968f
+      internalID: 555151097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_4
+      name: PacManLeft_4
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1ce037cd99f361478e6b563ca1e1318
-      internalID: 1873064216
+      spriteID: 57ef938259e0b2249a2d8e5b8caf42b7
+      internalID: 1354269777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_5
+      name: PacManLeft_5
       rect:
         serializedVersion: 2
         x: 80
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e03c6d95e25ed224489df3cd96e46c60
-      internalID: 939261029
+      spriteID: 5daff107f7cef8f4b9bd03a647c7fe61
+      internalID: 1648747933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_6
+      name: PacManLeft_6
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 100250b52a9031b4380ca7ae9c0d642a
-      internalID: 1374598185
+      spriteID: 3280e36e76c6eac438f09fb6fd85ba93
+      internalID: -466795880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCoin_7
+      name: PacManLeft_7
       rect:
         serializedVersion: 2
         x: 112
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3153a82bad66dbd429bd0c4d7d84105b
-      internalID: 75963976
+      spriteID: 5adeefc0578ff864aba1c0374feb3c16
+      internalID: 710057426
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BigCoin_0: 1380552548
-      BigCoin_2: -1004442280
-      BigCoin_3: 1718659719
-      BigCoin_5: 939261029
-      BigCoin_6: 1374598185
-      BigCoin_4: 1873064216
-      BigCoin_7: 75963976
-      BigCoin_1: -475157615
+      PacManLeft_4: 1354269777
+      PacManLeft_3: 555151097
+      PacManLeft_2: 1750500894
+      PacManLeft_5: 1648747933
+      PacManLeft_1: 1874372611
+      PacManLeft_0: 2004792378
+      PacManLeft_7: 710057426
+      PacManLeft_6: -466795880
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
