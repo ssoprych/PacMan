@@ -5,17 +5,19 @@ using UnityEngine.Tilemaps;
 
 public class Coin : MonoBehaviour
 {
+    public Tilemap tileMap;
+    public TileBase baseTile;
     private void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-            //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //Vector3Int gridPosition = tileMap.WorldToCell(mousePosition);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int gridPosition = tileMap.WorldToCell(mousePosition);
 
-            //TileBase clickedTile = tileMap.GetTile(gridPosition);
-           // tileMap.SetTile(gridPosition, baseTile);
-           // print(clickedTile);
-       // }
+            TileBase clickedTile = tileMap.GetTile(gridPosition);
+            tileMap.SetTile(gridPosition, baseTile);
+            print(clickedTile);
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
