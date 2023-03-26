@@ -23,8 +23,8 @@ public class PagMan : MonoBehaviour
         Rb.position = Vector3.MoveTowards(Rb.position, movePoint.position, Speed * Time.deltaTime);
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        if (Vector3.Distance(Rb.position, movePoint.position) <= .01f)
-        {
+          if (Vector3.Distance(Rb.position, movePoint.position) <= .01f)
+          {
             if (vertical == 1)
             {
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, 1f, 0f), .1f, whatStopsMovement))
@@ -53,7 +53,7 @@ public class PagMan : MonoBehaviour
                 Anim.SetFloat("MoveY", 0);
                 Anim.SetFloat("MoveX", -1);
             }
-        }
+          }
     }
 
     private void Update()
