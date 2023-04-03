@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11995afc1ef1c11478b9999e60322602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileMap: {fileID: 0}
-  baseTile: {fileID: 0}
+  tileMap: {fileID: 5015447533271411693, guid: 511643f37d2e679408947aa51eec580e, type: 3}
+  baseTile: {fileID: 11400000, guid: 79fbd19109900a34b8885af06ee6ce4e, type: 2}
 --- !u!61 &179801322612010470
 BoxCollider2D:
   m_ObjectHideFlags: 0
