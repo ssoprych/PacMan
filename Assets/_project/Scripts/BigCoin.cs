@@ -6,10 +6,13 @@ public class BigCoin : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PagMan"))
+        if (GameManager.Instance.GhostEaten == 0 )
         {
-            GameManager.Instance.ChaseMode = true;
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag("PagMan"))
+            {
+                GameManager.Instance.ChaseMode = true;
+                Destroy(gameObject);
+            }
         }
     }
 }

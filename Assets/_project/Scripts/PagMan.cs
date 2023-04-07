@@ -63,6 +63,7 @@ public class PagMan : MonoBehaviour
             if (GameManager.Instance.ChaseMode == true)
             {
                 Destroy(collision.gameObject);
+                GameManager.Instance.GhostEaten++;
                 GameManager.Instance.Score += 200;
             }
         }
