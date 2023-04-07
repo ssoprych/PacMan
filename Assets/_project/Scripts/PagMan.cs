@@ -56,6 +56,18 @@ public class PagMan : MonoBehaviour
           }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ghost"))
+        {
+            if (GameManager.Instance.ChaseMode == true)
+            {
+                Destroy(collision.gameObject);
+                GameManager.Instance.Score += 200;
+            }
+        }
+    }
+
     private void Update()
     {
         Move();

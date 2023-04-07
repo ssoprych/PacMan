@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public int Score;
-
+    public bool ChaseMode = false;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.

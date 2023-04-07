@@ -17,15 +17,9 @@ public class GhostAgent : MonoBehaviour
     }
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, Player.transform.position);
-
-        if (distance < _distanceRun)
+        if (GameManager.Instance.ChaseMode == true)
         {
-            Vector3 dirToPlayer = transform.position - Player.transform.position;
-
-            Vector3 newPos = transform.position + dirToPlayer;
-
-            agent.SetDestination(newPos);
+            StartCoroutine(Chase());
         }
         else
         {
@@ -33,8 +27,8 @@ public class GhostAgent : MonoBehaviour
         }
     }
 
-    //Chase Mode
-    private void ChaseMode()
+
+    private IEnumerator Chase()
     {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
@@ -46,5 +40,9 @@ public class GhostAgent : MonoBehaviour
 
             agent.SetDestination(newPos);
         }
+
+        yield return new WaitForSeconds(30f);
+        GameManager.Instance.ChaseMode = false;
+        yield break;
     }
 }
