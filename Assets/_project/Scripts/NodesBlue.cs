@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Nodes : MonoBehaviour
+public class NodesBlue : MonoBehaviour
 {
-    [SerializeField] private List<Vector3> Positions = new List<Vector3>();
+    [SerializeField] private List<Vector3> Positions2 = new List<Vector3>();
     [SerializeField] private NavMeshAgent _agent;
     public Transform Player;
-    private int _randomInt;
+    private int _random2Int;
     private float _distanceRun = 2f;
 
     private void Awake()
@@ -20,14 +20,14 @@ public class Nodes : MonoBehaviour
 
     private void Start()
     {
-        _randomInt = Random.Range(0, Positions.Count);
+        _random2Int = Random.Range(0, Positions2.Count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NodesGreen"))
+        if (collision.gameObject.CompareTag("NodesBlue"))
         {
-            _randomInt = Random.Range(0, Positions.Count);
+            _random2Int = Random.Range(0, Positions2.Count);
         }
     }
 
@@ -49,8 +49,9 @@ public class Nodes : MonoBehaviour
         }
         else
         {
-            _agent.SetDestination(Positions[_randomInt]);
+            _agent.SetDestination(Positions2[_random2Int]);
         }
-        
+
     }
 }
+

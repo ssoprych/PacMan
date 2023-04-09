@@ -8,6 +8,7 @@ TagManager:
   - PagMan
   - Ghost
   - NodesGreen
+  - NodesBlue
   layers:
   - Default
   - TransparentFX

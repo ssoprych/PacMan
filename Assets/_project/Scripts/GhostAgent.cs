@@ -17,6 +17,7 @@ public class GhostAgent : MonoBehaviour
     }
     void Update()
     {
+        Player = GameObject.FindGameObjectWithTag("PagMan").transform;
         if (GameManager.Instance.ChaseMode == true)
         {
             float distance = Vector3.Distance(transform.position, Player.transform.position);
@@ -35,7 +36,6 @@ public class GhostAgent : MonoBehaviour
             agent.SetDestination(Player.position);
         }
     }
-
 
 
 

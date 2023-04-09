@@ -6,6 +6,11 @@ public class Teleports : MonoBehaviour
 {
     public Transform movePoint;
     public Transform teleport;
+
+    private void Update()
+    {
+        movePoint = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Vector3 position = collision.transform.position;

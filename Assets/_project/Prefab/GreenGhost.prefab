@@ -112,6 +112,7 @@ MonoBehaviour:
   - {x: 4.52, y: -0.54, z: 0}
   - {x: 0.52, y: -5.53, z: 0}
   _agent: {fileID: 0}
+  Player: {fileID: 3258795644908845907, guid: 33e3b704383fb9a44b996b3dedcf6b48, type: 3}
   _randomInt: 0
 --- !u!195 &8010881601410924925
 NavMeshAgent:
@@ -148,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.009439409, y: 0.031464577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.13786899, y: 0.21967697}
   m_EdgeRadius: 0
 --- !u!50 &2617610
 Rigidbody2D:
