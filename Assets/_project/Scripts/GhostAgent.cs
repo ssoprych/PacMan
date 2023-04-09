@@ -7,7 +7,7 @@ public class GhostAgent : MonoBehaviour
 {
     public Transform Player;
     public NavMeshAgent agent;
-    private float _distanceRun = 4f;
+    private float _distanceRun = 2f;
 
     private void Awake()
     {

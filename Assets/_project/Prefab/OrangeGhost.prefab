@@ -110,7 +110,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3388772159802132708}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
