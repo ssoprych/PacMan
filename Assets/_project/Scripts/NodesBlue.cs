@@ -9,7 +9,8 @@ public class NodesBlue : MonoBehaviour
     [SerializeField] private NavMeshAgent _agent;
     public Transform Player;
     private int _random2Int;
-    private float _distanceRun = 2f;
+    private int _randomSecure2; // intiger to prevent situation that a new random number will be the same and the ghost wont move
+    private float _distanceRun = 3.5f;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class NodesBlue : MonoBehaviour
     private void Start()
     {
         _random2Int = Random.Range(0, Positions2.Count);
+        _randomSecure2 = _random2Int;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +30,11 @@ public class NodesBlue : MonoBehaviour
         if (collision.gameObject.CompareTag("NodesBlue"))
         {
             _random2Int = Random.Range(0, Positions2.Count);
+            while (_random2Int == _randomSecure2)
+            {
+                _random2Int = Random.Range(0, Positions2.Count);
+            }
+            _randomSecure2 = _random2Int;
         }
     }
 
@@ -46,12 +53,16 @@ public class NodesBlue : MonoBehaviour
 
                 _agent.SetDestination(newPos);
             }
+            else
+            {
+                _agent.SetDestination(Positions2[_random2Int]);
+            }
         }
         else
         {
             _agent.SetDestination(Positions2[_random2Int]);
-        }
 
+        }
     }
 }
 

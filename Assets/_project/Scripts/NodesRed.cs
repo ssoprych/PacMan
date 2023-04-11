@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Nodes : MonoBehaviour
+public class NodesRed : MonoBehaviour
 {
-    [SerializeField] private List<Vector3> Positions = new List<Vector3>();
+    [SerializeField] private List<Vector3> Positions3 = new List<Vector3>();
     [SerializeField] private NavMeshAgent _agent;
     public Transform Player;
-    private int _randomSecure; // intiger to prevent situation that a new random number will be the same and the ghost wont move
-    private int _randomInt;
+    private int _random3Int;
+    private int _randomSecure3; // intiger to prevent situation that a new random number will be the same and the ghost wont move
     private float _distanceRun = 3.5f;
 
     private void Awake()
@@ -21,20 +21,20 @@ public class Nodes : MonoBehaviour
 
     private void Start()
     {
-        _randomInt = Random.Range(0, Positions.Count);
-        _randomSecure = _randomInt;
+        _random3Int = Random.Range(0, Positions3.Count);
+        _randomSecure3 = _random3Int;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NodesGreen"))
+        if (collision.gameObject.CompareTag("NodesRed"))
         {
-            _randomInt = Random.Range(0, Positions.Count);
-            while (_randomInt == _randomSecure)
+            _random3Int = Random.Range(0, Positions3.Count);
+            while (_random3Int == _randomSecure3)
             {
-                _randomInt = Random.Range(0, Positions.Count);
+                _random3Int = Random.Range(0, Positions3.Count);
             }
-            _randomSecure = _randomInt;
+            _randomSecure3 = _random3Int;
         }
     }
 
@@ -56,13 +56,14 @@ public class Nodes : MonoBehaviour
             }
             else
             {
-                _agent.SetDestination(Positions[_randomInt]);
+                _agent.SetDestination(Positions3[_random3Int]);
             }
         }
         else
         {
-            _agent.SetDestination(Positions[_randomInt]);
+            _agent.SetDestination(Positions3[_random3Int]);
         }
-        
+
     }
 }
+

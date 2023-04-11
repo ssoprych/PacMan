@@ -9,6 +9,8 @@ TagManager:
   - Ghost
   - NodesGreen
   - NodesBlue
+  - NodesRed
+  - NodesYellow
   layers:
   - Default
   - TransparentFX

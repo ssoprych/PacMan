@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class GhostAgent : MonoBehaviour
+public class RedGuy : MonoBehaviour
 {
     public Transform Player;
-    public NavMeshAgent agent;
-    private float _distanceRun = 5f;
+    [SerializeField] private NavMeshAgent _agent;
+    private float _distanceRun = 3.5f;
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateUpAxis = false;
-        agent.updateRotation = false;
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateUpAxis = false;
+        _agent.updateRotation = false;
     }
     void Update()
     {
         Player = GameObject.FindGameObjectWithTag("PagMan").transform;
+        _agent.SetDestination(Player.position);
         if (GameManager.Instance.ChaseMode == true)
         {
             float distance = Vector3.Distance(transform.position, Player.transform.position);
@@ -28,12 +29,16 @@ public class GhostAgent : MonoBehaviour
 
                 Vector3 newPos = transform.position + dirToPlayer;
 
-                agent.SetDestination(newPos);
+                _agent.SetDestination(newPos);
+            }
+            else
+            {
+                _agent.SetDestination(Player.position);
             }
         }
         else
         {
-            agent.SetDestination(Player.position);
+            _agent.SetDestination(Player.position);
         }
     }
 

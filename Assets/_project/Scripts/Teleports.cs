@@ -17,6 +17,9 @@ public class Teleports : MonoBehaviour
         position.x = this.teleport.position.x;
         position.y = this.teleport.position.y;
         collision.transform.position = position;
-        movePoint.transform.position = position;
+        if (collision.gameObject.CompareTag("PagMan"))
+        {
+            movePoint.transform.position = position;
+        }
     }
 }

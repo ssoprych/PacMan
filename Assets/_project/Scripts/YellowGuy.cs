@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Nodes : MonoBehaviour
+public class YellowGuy : MonoBehaviour
 {
-    [SerializeField] private List<Vector3> Positions = new List<Vector3>();
+    [SerializeField] private List<Vector3> Positions4 = new List<Vector3>();
     [SerializeField] private NavMeshAgent _agent;
     public Transform Player;
-    private int _randomSecure; // intiger to prevent situation that a new random number will be the same and the ghost wont move
-    private int _randomInt;
+    private int _random4Int;
+    private int _randomSecure4; // intiger to prevent situation that a new random number will be the same and the ghost wont move
     private float _distanceRun = 3.5f;
 
     private void Awake()
@@ -21,27 +21,26 @@ public class Nodes : MonoBehaviour
 
     private void Start()
     {
-        _randomInt = Random.Range(0, Positions.Count);
-        _randomSecure = _randomInt;
+        _random4Int = Random.Range(0, Positions4.Count);
+        _randomSecure4 = _random4Int;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NodesGreen"))
+        if (collision.gameObject.CompareTag("NodesYellow"))
         {
-            _randomInt = Random.Range(0, Positions.Count);
-            while (_randomInt == _randomSecure)
+            _random4Int = Random.Range(0, Positions4.Count);
+            while (_random4Int == _randomSecure4)
             {
-                _randomInt = Random.Range(0, Positions.Count);
+                _random4Int = Random.Range(0, Positions4.Count);
             }
-            _randomSecure = _randomInt;
+            _randomSecure4 = _random4Int;
         }
     }
 
     private void Update()
     {
         Player = GameObject.FindGameObjectWithTag("PagMan").transform;
-        
         if (GameManager.Instance.ChaseMode == true)
         {
             float distance = Vector3.Distance(transform.position, Player.transform.position);
@@ -56,13 +55,19 @@ public class Nodes : MonoBehaviour
             }
             else
             {
-                _agent.SetDestination(Positions[_randomInt]);
+                _agent.SetDestination(Positions4[_random4Int]);
             }
         }
         else
         {
-            _agent.SetDestination(Positions[_randomInt]);
+            _agent.SetDestination(Positions4[_random4Int]);
+            float distance2 = Vector3.Distance(transform.position, Player.transform.position);
+
+            if (distance2 < _distanceRun)
+            {
+                _agent.SetDestination(Player.position);
+            }
         }
-        
     }
 }
+
