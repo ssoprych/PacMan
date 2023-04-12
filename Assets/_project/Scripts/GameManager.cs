@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public int Score;
     public bool ChaseMode;
     public int GhostEaten = 0;
-    public GameObject Green, Blue, Red, Orange, Yellow;
-    public Transform RedSpawn;
+    public GameObject Green, Blue, Red, Orange, Yellow, PacMan;
+    public Transform RedSpawn, PacManSpawn, movePoint;
     public bool IsGreen, IsBlue, IsRed, IsOrange, IsYellow;
+    public int PacHealth;
+    public bool Death;
 
     [Header("Timer")]
     public float startTime = 0f;
@@ -36,21 +38,39 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Score = 0;
+        PacHealth = 3;
         ChaseMode = false;
     }
 
     private void Update()
     {
+        if (Death)
+        {
+            Death = false;
+            PacMan.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
+            movePoint.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
+        }
+
+        if (PacHealth == 0)
+        {
+            Time.timeScale = 0;
+        }
+
+        // Ending Chase after 10 seconds
         if (timerStart && Time.time - startTime > waitFor)
         {
             ChaseMode = false;
             timerStart = false;
         }
+
+        // Ending Chase mode after eating 1 ghost 
         if (GhostEaten == 1)
         {
             GhostEaten = 0;
             ChaseMode = false;
         }
+
+        // Respawning particular ghost 
         if (IsYellow)
         {
             Instantiate(Yellow, RedSpawn.transform.position, RedSpawn.transform.rotation);

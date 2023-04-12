@@ -58,44 +58,85 @@ public class PagMan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.Instance.ChaseMode == true)
-        {
             if (collision.gameObject.CompareTag("GreenGhost"))
             {
-                Destroy(collision.gameObject);
-                GameManager.Instance.GhostEaten++;
-                GameManager.Instance.Score += 200;
-                GameManager.Instance.IsGreen = true;
+                if (GameManager.Instance.ChaseMode == true)
+                {
+                    Destroy(collision.gameObject);
+                    GameManager.Instance.GhostEaten++;
+                    GameManager.Instance.Score += 200;
+                    GameManager.Instance.IsGreen = true;
+                }
+                else
+                {
+                    Deth();
+                }
             }
             if (collision.gameObject.CompareTag("YellowGhost"))
             {
-                Destroy(collision.gameObject);
-                GameManager.Instance.GhostEaten++;
-                GameManager.Instance.Score += 200;
-                GameManager.Instance.IsYellow = true;
+                if (GameManager.Instance.ChaseMode == true)
+                {
+                    Destroy(collision.gameObject);
+                    GameManager.Instance.GhostEaten++;
+                    GameManager.Instance.Score += 200;
+                    GameManager.Instance.IsYellow = true;
+                }
+                else
+                {
+                    Deth();
+                }
+                
             }
             if (collision.gameObject.CompareTag("BlueGhost"))
             {
-                Destroy(collision.gameObject);
-                GameManager.Instance.GhostEaten++;
-                GameManager.Instance.Score += 200;
-                GameManager.Instance.IsBlue = true;
+                if (GameManager.Instance.ChaseMode == true)
+                {
+                    Destroy(collision.gameObject);
+                    GameManager.Instance.GhostEaten++;
+                    GameManager.Instance.Score += 200;
+                    GameManager.Instance.IsBlue = true;
+                }
+                else
+                {
+                    Deth();
+                }
+
             }
             if (collision.gameObject.CompareTag("RedGhost"))
             {
-                Destroy(collision.gameObject);
-                GameManager.Instance.GhostEaten++;
-                GameManager.Instance.Score += 200;
-                GameManager.Instance.IsRed = true;
+                if (GameManager.Instance.ChaseMode == true)
+                {
+                    Destroy(collision.gameObject);
+                    GameManager.Instance.GhostEaten++;
+                    GameManager.Instance.Score += 200;
+                    GameManager.Instance.IsRed = true;
+                }
+                else
+                {
+                    Deth();
+                }
             }
             if (collision.gameObject.CompareTag("OrangeGhost"))
             {
-                Destroy(collision.gameObject);
-                GameManager.Instance.GhostEaten++;
-                GameManager.Instance.Score += 200;
-                GameManager.Instance.IsOrange = true;
+                if (GameManager.Instance.ChaseMode == true)
+                {
+                    Destroy(collision.gameObject);
+                    GameManager.Instance.GhostEaten++;
+                    GameManager.Instance.Score += 200;
+                    GameManager.Instance.IsOrange = true;
+                }
+                else
+                {
+                    Deth();
+                }
             }
         }
+    
+
+    private void Deth()
+    {
+        GameManager.Instance.Death = true;
+        GameManager.Instance.PacHealth--;
     }
 
     private void Update()
