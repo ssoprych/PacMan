@@ -17959,12 +17959,15 @@ MonoBehaviour:
   Score: 0
   ChaseMode: 0
   GhostEaten: 0
+  startTime: 0
+  waitFor: 10
+  timerStart: 0
   Green: {fileID: 8010881601410924915, guid: e045c1ec1aba7a046ab3535acbae6d5d, type: 3}
   Blue: {fileID: 5219860490737067411, guid: deacf5b0dd9cae94e9689017ce386855, type: 3}
   Red: {fileID: 4221370902934323647, guid: 57612f527632cbc468c8416626f88045, type: 3}
   Orange: {fileID: 3388772159802132708, guid: 9a2e35bd49eddf9429eec87c7d5b58ea, type: 3}
   Yellow: {fileID: 4623813511700087418, guid: f82423d7950e8734c8dbb2860d449dbf, type: 3}
-  RedSpawn: {fileID: 0}
+  RedSpawn: {fileID: 1578211895}
   IsGreen: 0
   IsBlue: 0
   IsRed: 0

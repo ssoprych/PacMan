@@ -5,13 +5,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [Header("Game")]
     public int Score;
     public bool ChaseMode;
     public int GhostEaten = 0;
     public GameObject Green, Blue, Red, Orange, Yellow;
-    //public Transform GreenSpawn, BlueSpawn, RedSpawn, OrangeSpawn, YellowSpawn;
     public Transform RedSpawn;
     public bool IsGreen, IsBlue, IsRed, IsOrange, IsYellow;
+
+    [Header("Timer")]
+    public float startTime = 0f;
+    public float waitFor = 10f;
+    public bool timerStart = false;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -26,6 +32,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     private void Start()
     {
         Score = 0;
@@ -34,6 +41,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (timerStart && Time.time - startTime > waitFor)
+        {
+            ChaseMode = false;
+            timerStart = false;
+        }
         if (GhostEaten == 1)
         {
             GhostEaten = 0;

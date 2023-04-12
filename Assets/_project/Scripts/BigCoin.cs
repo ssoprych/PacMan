@@ -11,6 +11,8 @@ public class BigCoin : MonoBehaviour
             if (collision.gameObject.CompareTag("PagMan"))
             {
                 GameManager.Instance.ChaseMode = true;
+                GameManager.Instance.startTime = Time.time;
+                GameManager.Instance.timerStart = true;
                 Destroy(gameObject);
             }
         }
