@@ -9,6 +9,7 @@ public class Lives : MonoBehaviour
 
     public Image[] Pacs;
     public Sprite PacMan;
+    public Sprite Man;
 
     private void Update()
     {
@@ -22,15 +23,12 @@ public class Lives : MonoBehaviour
             {
                 Pacs[i].sprite = PacMan;
             }
-
-            if (i< numOfPacs)
-            {
-                Pacs[i].enabled = true;
-            }
             else
             {
                 Pacs[i].enabled = false;
             }
+
+            
         }
     }
 }
