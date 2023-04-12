@@ -11,6 +11,11 @@ TagManager:
   - NodesBlue
   - NodesRed
   - NodesYellow
+  - GreenGhost
+  - YellowGhost
+  - RedGhost
+  - BlueGhost
+  - OrangeGhost
   layers:
   - Default
   - TransparentFX

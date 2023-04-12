@@ -58,13 +58,42 @@ public class PagMan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ghost"))
+        if (GameManager.Instance.ChaseMode == true)
         {
-            if (GameManager.Instance.ChaseMode == true)
+            if (collision.gameObject.CompareTag("GreenGhost"))
             {
                 Destroy(collision.gameObject);
                 GameManager.Instance.GhostEaten++;
                 GameManager.Instance.Score += 200;
+                GameManager.Instance.IsGreen = true;
+            }
+            if (collision.gameObject.CompareTag("YellowGhost"))
+            {
+                Destroy(collision.gameObject);
+                GameManager.Instance.GhostEaten++;
+                GameManager.Instance.Score += 200;
+                GameManager.Instance.IsYellow = true;
+            }
+            if (collision.gameObject.CompareTag("BlueGhost"))
+            {
+                Destroy(collision.gameObject);
+                GameManager.Instance.GhostEaten++;
+                GameManager.Instance.Score += 200;
+                GameManager.Instance.IsBlue = true;
+            }
+            if (collision.gameObject.CompareTag("RedGhost"))
+            {
+                Destroy(collision.gameObject);
+                GameManager.Instance.GhostEaten++;
+                GameManager.Instance.Score += 200;
+                GameManager.Instance.IsRed = true;
+            }
+            if (collision.gameObject.CompareTag("OrangeGhost"))
+            {
+                Destroy(collision.gameObject);
+                GameManager.Instance.GhostEaten++;
+                GameManager.Instance.Score += 200;
+                GameManager.Instance.IsOrange = true;
             }
         }
     }

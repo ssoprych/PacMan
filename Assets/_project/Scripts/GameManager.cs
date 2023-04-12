@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public int Score;
     public bool ChaseMode;
     public int GhostEaten = 0;
+    public GameObject Green, Blue, Red, Orange, Yellow;
+    //public Transform GreenSpawn, BlueSpawn, RedSpawn, OrangeSpawn, YellowSpawn;
+    public Transform RedSpawn;
+    public bool IsGreen, IsBlue, IsRed, IsOrange, IsYellow;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -34,6 +38,31 @@ public class GameManager : MonoBehaviour
         {
             GhostEaten = 0;
             ChaseMode = false;
+        }
+        if (IsYellow)
+        {
+            Instantiate(Yellow, RedSpawn.transform.position, RedSpawn.transform.rotation);
+            IsYellow = false;
+        }
+        if (IsOrange)
+        {
+            Instantiate(Orange, RedSpawn.transform.position, RedSpawn.transform.rotation);
+            IsOrange = false;
+        }
+        if (IsRed)
+        {
+            Instantiate(Red, RedSpawn.transform.position, RedSpawn.transform.rotation);
+            IsRed = false;
+        }
+        if (IsBlue)
+        {
+            Instantiate(Blue, RedSpawn.transform.position, RedSpawn.transform.rotation);
+            IsBlue = false;
+        }
+        if (IsGreen)
+        {
+            Instantiate(Green, RedSpawn.transform.position, RedSpawn.transform.rotation);
+            IsGreen = false;
         }
 
     }

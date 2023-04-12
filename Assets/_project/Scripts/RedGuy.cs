@@ -15,6 +15,7 @@ public class RedGuy : MonoBehaviour
         _agent.updateUpAxis = false;
         _agent.updateRotation = false;
     }
+
     void Update()
     {
         Player = GameObject.FindGameObjectWithTag("PagMan").transform;
@@ -39,6 +40,7 @@ public class RedGuy : MonoBehaviour
         else
         {
             _agent.SetDestination(Player.position);
+
         }
     }
 

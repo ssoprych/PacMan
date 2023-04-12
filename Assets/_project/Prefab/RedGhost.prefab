@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4221370902934323616}
   m_Layer: 0
   m_Name: RedGhost
-  m_TagString: Ghost
+  m_TagString: RedGhost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

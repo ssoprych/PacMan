@@ -11,7 +11,6 @@ public class Nodes : MonoBehaviour
     private int _randomSecure; // intiger to prevent situation that a new random number will be the same and the ghost wont move
     private int _randomInt;
     private float _distanceRun = 3.5f;
-    private float _distanceChase = 2f;
 
 
     private void Awake()
@@ -66,7 +65,7 @@ public class Nodes : MonoBehaviour
             _agent.SetDestination(Positions[_randomInt]);
             float distance2 = Vector3.Distance(transform.position, Player.transform.position);
 
-            if (distance2 < _distanceChase)
+            if (distance2 < _distanceRun)
             {
                 _agent.SetDestination(Player.position);
             }
