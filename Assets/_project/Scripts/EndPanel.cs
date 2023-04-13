@@ -21,7 +21,7 @@ public class EndPanel : MonoBehaviour
 
     public void Back()
     {
-        SceneManager.LoadScene("Menu");
+        //SceneManager.LoadScene("Menu");
     }
 
 }

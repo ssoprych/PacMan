@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviour
         ScoreText.text = "SCORE: " + Score;
         if (Death)
         {
-            Death = false;
-            PacMan.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
             movePoint.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
+            PacMan.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
+            Death = false;
         }
 
         if (PacHealth <= 0)

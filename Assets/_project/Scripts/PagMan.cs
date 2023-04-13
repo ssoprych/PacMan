@@ -7,7 +7,7 @@ public class PagMan : MonoBehaviour
     public Rigidbody2D Rb;
     public Animator Anim;
     public Transform movePoint;
-    public float Speed = 3f;
+    public float Speed = 5f;
     public LayerMask whatStopsMovement;
     [SerializeField] private GameObject _particlesPlayer, _particlesYellow, _particlesRed, _particlesOrange, _particlesBlue, _particlesGreen;
 
