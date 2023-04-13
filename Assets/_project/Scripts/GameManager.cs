@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool IsGreen, IsBlue, IsRed, IsOrange, IsYellow;
     public int PacHealth;
     public bool Death;
+    public TMP_Text ScoreText;
 
     [Header("Timer")]
     public float startTime = 0f;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        ScoreText.text = "SCORE: " + Score;
         if (Death)
         {
             Death = false;
