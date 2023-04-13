@@ -18,11 +18,14 @@ public class GameManager : MonoBehaviour
     public bool Death;
     public TMP_Text ScoreText;
 
+    [Header("Panels")]
+    [SerializeField] private GameObject _endPanel;
+
     [Header("Timer")]
     public float startTime = 0f;
     public float waitFor = 10f;
     public bool timerStart = false;
-    private void Awake()
+    private void Awake() 
     {
         // If there is an instance, and it's not me, delete myself.
 
@@ -39,9 +42,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         Score = 0;
         PacHealth = 3;
+        GhostEaten = 0;
         ChaseMode = false;
+        _endPanel.SetActive(false);
     }
 
     private void Update()
@@ -54,8 +60,13 @@ public class GameManager : MonoBehaviour
             movePoint.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
         }
 
-        if (PacHealth == 0)
+        if (PacHealth <= 0)
         {
+            if (Score > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", Score);
+            }
+            _endPanel.SetActive(true);
             Time.timeScale = 0;
         }
 

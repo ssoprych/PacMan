@@ -145,6 +145,7 @@ public class PagMan : MonoBehaviour
         GameManager.Instance.Death = true;
         GameManager.Instance.PacHealth--;
         Instantiate(_particlesPlayer, transform.position, transform.rotation);
+        GameManager.Instance.Score -= 100;
     }
 
     private void Update()
