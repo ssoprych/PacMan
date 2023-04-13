@@ -108,6 +108,12 @@ MonoBehaviour:
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
+  _particlesPlayer: {fileID: 2780163131342507731, guid: af7608264ca6ca847b51c5a9b9195e1c, type: 3}
+  _particlesYellow: {fileID: 5958300450251210436, guid: 1a6113c16dfc86d4385931d9e1dd0080, type: 3}
+  _particlesRed: {fileID: 2202890729674379226, guid: ce14651652cb41f43992c672a398e651, type: 3}
+  _particlesOrange: {fileID: 4207658159144925894, guid: 987454d0e605ee3479f0b078635bfc50, type: 3}
+  _particlesBlue: {fileID: 7658635108939956036, guid: 77039c8fa9f18004b810212c0f78c87f, type: 3}
+  _particlesGreen: {fileID: 8469236449075370803, guid: fa629b582080f334a8932bdd299f7d97, type: 3}
 --- !u!61 &3258795644908845932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,7 +192,7 @@ GameObject:
   - component: {fileID: 3258795645189370713}
   m_Layer: 0
   m_Name: PlayerMovePoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

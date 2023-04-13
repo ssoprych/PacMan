@@ -9,6 +9,7 @@ public class PagMan : MonoBehaviour
     public Transform movePoint;
     public float Speed = 3f;
     public LayerMask whatStopsMovement;
+    [SerializeField] private GameObject _particlesPlayer, _particlesYellow, _particlesRed, _particlesOrange, _particlesBlue, _particlesGreen;
 
     private void Start()
     {
@@ -66,6 +67,8 @@ public class PagMan : MonoBehaviour
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsGreen = true;
+                    Instantiate(_particlesGreen, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+                
                 }
                 else
                 {
@@ -80,7 +83,8 @@ public class PagMan : MonoBehaviour
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsYellow = true;
-                }
+                    Instantiate(_particlesYellow, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            }
                 else
                 {
                     Deth();
@@ -95,6 +99,7 @@ public class PagMan : MonoBehaviour
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsBlue = true;
+                    Instantiate(_particlesBlue, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
                 }
                 else
                 {
@@ -110,7 +115,8 @@ public class PagMan : MonoBehaviour
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsRed = true;
-                }
+                    Instantiate(_particlesRed, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            }
                 else
                 {
                     Deth();
@@ -124,7 +130,8 @@ public class PagMan : MonoBehaviour
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsOrange = true;
-                }
+                    Instantiate(_particlesOrange, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            }
                 else
                 {
                     Deth();
@@ -137,6 +144,7 @@ public class PagMan : MonoBehaviour
     {
         GameManager.Instance.Death = true;
         GameManager.Instance.PacHealth--;
+        Instantiate(_particlesPlayer, transform.position, transform.rotation);
     }
 
     private void Update()

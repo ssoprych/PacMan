@@ -20419,10 +20419,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PagMan
       objectReference: {fileID: 0}
-    - target: {fileID: 3258795645189370712, guid: 33e3b704383fb9a44b996b3dedcf6b48, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e3b704383fb9a44b996b3dedcf6b48, type: 3}
 --- !u!1001 &3388772161227444460
