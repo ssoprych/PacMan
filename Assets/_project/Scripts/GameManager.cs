@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Panels")]
     [SerializeField] private GameObject _endPanel;
+    [SerializeField] private GameObject _winPanel;
 
     [Header("Timer")]
     public float startTime = 0f;
@@ -58,6 +59,12 @@ public class GameManager : MonoBehaviour
             movePoint.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
             PacMan.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
             Death = false;
+        }
+
+        if (GameObject.FindGameObjectsWithTag("Coin").Length == 0)
+        {
+            _winPanel.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (PacHealth <= 0)
