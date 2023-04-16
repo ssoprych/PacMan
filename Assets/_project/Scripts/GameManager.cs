@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int PacHealth;
     public bool Death;
     public TMP_Text ScoreText;
+    public bool isPaused = false;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip _winning;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     [Header("Panels")]
     [SerializeField] private GameObject _endPanel;
     [SerializeField] private GameObject _winPanel;
+    [SerializeField] private GameObject _pausePanel;
 
     [Header("Timer")]
     public float startTime = 0f;
@@ -59,6 +61,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // Pause Menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+        }
+
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            _pausePanel.SetActive(true);
+        }
+        else if (isPaused == false)
+        {
+            Time.timeScale = 1;
+            _pausePanel.SetActive(false);
+        }
+
         ScoreText.text = "SCORE: " + Score;
         if (Death)
         {
