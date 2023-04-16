@@ -108,6 +108,8 @@ MonoBehaviour:
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
+  _deathSound: {fileID: 8300000, guid: 74041e7c7c2bf1a4f8f946d777e296f5, type: 3}
+  _ghostEat: {fileID: 8300000, guid: 662772d35a9d2bf428204cbe4662bf19, type: 3}
   _particlesPlayer: {fileID: 2780163131342507731, guid: af7608264ca6ca847b51c5a9b9195e1c, type: 3}
   _particlesYellow: {fileID: 5958300450251210436, guid: 1a6113c16dfc86d4385931d9e1dd0080, type: 3}
   _particlesRed: {fileID: 2202890729674379226, guid: ce14651652cb41f43992c672a398e651, type: 3}

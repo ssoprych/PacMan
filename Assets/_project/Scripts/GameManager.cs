@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     public bool Death;
     public TMP_Text ScoreText;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _winning;
+    [SerializeField] private AudioClip _gameMusic;
+
     [Header("Panels")]
     [SerializeField] private GameObject _endPanel;
     [SerializeField] private GameObject _winPanel;
@@ -43,12 +47,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayMusic(_gameMusic);
         Time.timeScale = 1;
         Score = 0;
         PacHealth = 3;
         GhostEaten = 0;
         ChaseMode = false;
         _endPanel.SetActive(false);
+        _winPanel.SetActive(false);
     }
 
     private void Update()
@@ -73,8 +79,10 @@ public class GameManager : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("Coin").Length == 0)
         {
+            
             _winPanel.SetActive(true);
             Time.timeScale = 0;
+            //AudioManager.Instance.PlaySound(_winning); doesnt work:((
         }
 
         if (PacHealth <= 0)

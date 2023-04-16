@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class BigCoin : MonoBehaviour
 {
+    [SerializeField] private AudioClip _bigCoin;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.Instance.GhostEaten == 0 )
-        {
-            if (collision.gameObject.CompareTag("PagMan"))
-            {
-                GameManager.Instance.ChaseMode = true;
-                GameManager.Instance.startTime = Time.time;
-                GameManager.Instance.timerStart = true;
-                Destroy(gameObject);
-            }
-        }
+
+          if (collision.gameObject.CompareTag("PagMan"))
+          {
+            AudioManager.Instance.PlaySound2(_bigCoin);
+            GameManager.Instance.ChaseMode = true;
+            GameManager.Instance.GhostEaten = 0;
+            GameManager.Instance.startTime = Time.time;
+            GameManager.Instance.timerStart = true;
+            Destroy(gameObject);
+
+
+          }
     }
 }

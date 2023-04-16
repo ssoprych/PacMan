@@ -9,6 +9,8 @@ public class PagMan : MonoBehaviour
     public Transform movePoint;
     public float Speed = 5f;
     public LayerMask whatStopsMovement;
+    [SerializeField] private AudioClip _deathSound;
+    [SerializeField] private AudioClip _ghostEat;
     [SerializeField] private GameObject _particlesPlayer, _particlesYellow, _particlesRed, _particlesOrange, _particlesBlue, _particlesGreen;
 
     private void Start()
@@ -64,6 +66,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
+                    AudioManager.Instance.PlaySound(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsGreen = true;
@@ -80,6 +83,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
+                    AudioManager.Instance.PlaySound(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsYellow = true;
@@ -96,6 +100,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
+                    AudioManager.Instance.PlaySound(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsBlue = true;
@@ -112,6 +117,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
+                    AudioManager.Instance.PlaySound(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsRed = true;
@@ -127,6 +133,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
+                    AudioManager.Instance.PlaySound(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsOrange = true;
@@ -143,6 +150,7 @@ public class PagMan : MonoBehaviour
     private void Deth()
     {
         GameManager.Instance.Death = true;
+        AudioManager.Instance.PlaySound(_deathSound);
         GameManager.Instance.PacHealth--;
         Instantiate(_particlesPlayer, transform.position, transform.rotation);
         GameManager.Instance.Score -= 100;
