@@ -66,7 +66,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
-                    AudioManager.Instance.PlaySound(_ghostEat);
+                    AudioManager.Instance.PlaySound2(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsGreen = true;
@@ -83,7 +83,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
-                    AudioManager.Instance.PlaySound(_ghostEat);
+                    AudioManager.Instance.PlaySound2(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsYellow = true;
@@ -100,7 +100,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
-                    AudioManager.Instance.PlaySound(_ghostEat);
+                    AudioManager.Instance.PlaySound2(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsBlue = true;
@@ -117,7 +117,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
-                    AudioManager.Instance.PlaySound(_ghostEat);
+                    AudioManager.Instance.PlaySound2(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsRed = true;
@@ -133,7 +133,7 @@ public class PagMan : MonoBehaviour
                 if (GameManager.Instance.ChaseMode == true)
                 {
                     Destroy(collision.gameObject);
-                    AudioManager.Instance.PlaySound(_ghostEat);
+                    AudioManager.Instance.PlaySound2(_ghostEat);
                     GameManager.Instance.GhostEaten++;
                     GameManager.Instance.Score += 200;
                     GameManager.Instance.IsOrange = true;
