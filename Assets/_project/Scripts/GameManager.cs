@@ -58,6 +58,16 @@ public class GameManager : MonoBehaviour
         {
             movePoint.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
             PacMan.transform.position = new Vector2(PacManSpawn.position.x, PacManSpawn.position.y);
+            Destroy(GameObject.FindGameObjectWithTag("YellowGhost"));
+            Destroy(GameObject.FindGameObjectWithTag("RedGhost"));
+            Destroy(GameObject.FindGameObjectWithTag("OrangeGhost"));
+            Destroy(GameObject.FindGameObjectWithTag("BlueGhost"));
+            Destroy(GameObject.FindGameObjectWithTag("GreenGhost"));
+            IsBlue = true;
+            IsGreen = true;
+            IsRed = true;
+            IsYellow = true;
+            IsOrange = true;
             Death = false;
         }
 
@@ -84,8 +94,8 @@ public class GameManager : MonoBehaviour
             timerStart = false;
         }
 
-        // Ending Chase mode after eating 1 ghost 
-        if (GhostEaten == 1)
+        // Ending Chase mode after eating 2 ghost 
+        if (GhostEaten == 2)
         {
             GhostEaten = 0;
             ChaseMode = false;
